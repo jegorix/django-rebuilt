@@ -40,3 +40,17 @@ nav ul li a:hover{
     background-color: #555;
     color:white;
 }
+
+.pac2{
+    width: 700px;
+    height: 500px;
+    border: 5px solid #333;
+    border-radius: 25px;
+    box-shadow: 10px 15px 8px rgba(0,0,0, 0.2);
+    transition: all 0.3s ease;
+  }
+
+.pac2:hover{
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+    transform: scale(1.05)
+}

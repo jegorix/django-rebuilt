@@ -9,7 +9,7 @@ def home(request):
     }
     return render(request, 'boiler/index.html', data)
 
-def about(requset):
+def about(request):
     # return render(requset, '<h1>Hi message!</h1>')
-    return HttpResponse("HELLOOOOO")
+    return render(request, 'boiler/pointer.html')
 
