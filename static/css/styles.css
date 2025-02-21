@@ -3,7 +3,11 @@ h1{
     font-family: "Big Caslon";
     font-size: 50px;
 }
-body h2 {color: green;}
+h2 {
+    font-family: "Big Caslon";
+    font-size: 35px;
+}
+
 
 header {
     background-color: lightblue;
