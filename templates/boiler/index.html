@@ -33,11 +33,16 @@
         {% endif %}
 
 
-    <div class = "name_form">
+        <form method="POST">
+            {% csrf_token %}
+            <table>
+            {{ data.form }}
+            </table>
+            <input type="submit" value="Отправить">
 
-        {{ data.form }}
 
-    </div>
+        </form>
+
 
 
     </main>
