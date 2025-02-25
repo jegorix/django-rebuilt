@@ -22,5 +22,6 @@ def about(request):
 def goods(request):
     return HttpResponse('GOODS PAGE')
 
-
+def contact(request):
+    return render(request, 'boiler/contacts.html')
 
