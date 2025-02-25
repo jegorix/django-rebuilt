@@ -1,5 +1,30 @@
 {% extends 'boiler/base.html' %}
-{% block title %} CONTACTS {% endblock %}
-{% block header %} <h1> Contacts page </h1> {% endblock %}
-{% block content %} <p> This is page about contacts </p> {% endblock %}
-{% block footer %} <h2> footer grade</h2> {% endblock %}
+{% load static %}
+
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    {% block extra_css %}
+        <link rel="stylesheet" href=" {% static 'css/contacts.css' %} ">
+    {% endblock %}
+
+    {% block title %} CONTACTS {% endblock %}
+    {% block header %} <h1 class="fcont"> Contacts page </h1> {% endblock %}
+
+</head>
+
+    <body>
+    {% block content %} <p> This is page about contacts </p> {% endblock %}
+    {% block footer %} <h2> footer grade</h2> {% endblock %}
+    </body>
+
+
+</html>
+
+
+
