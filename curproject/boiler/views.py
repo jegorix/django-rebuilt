@@ -19,3 +19,8 @@ def about(request):
     # return render(requset, '<h1>Hi message!</h1>')
     return render(request, 'boiler/pointer.html')
 
+def goods(request):
+    return HttpResponse('GOODS PAGE')
+
+
+

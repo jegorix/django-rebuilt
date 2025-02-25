@@ -14,12 +14,12 @@
          <h1>Boilers.com</h1>
          <nav>
              <ul>
-                 {% for item in head_items %}
-                 <li><a href="#">{{ item }}</a></li>
-{#                 <li><a href="#">about</a></li>#}
-{#                 <li><a href="#">goods</a></li>#}
+{#                 {% for item in head_items %}#}
+{#                 <li><a href="#">{{ item }}</a></li>#}
+                <li><a href="{% url 'about' %}">about</a></li>
+                 <li><a href="{% url 'goods' %}">goods</a></li>
 {#                 <li><a href="#">contact</a></li>#}
-                 {% endfor %}
+{#                 {% endfor %}#}
              </ul>
          </nav>
 
