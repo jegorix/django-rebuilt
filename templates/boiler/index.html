@@ -19,6 +19,7 @@
                 <li><a href="{% url 'about' %}">about</a></li>
                  <li><a href="{% url 'goods' %}">goods</a></li>
                  <li><a href="{% url 'contact' %}">contacts</a></li>
+                 <li><a href="{% url 'info' %}">info</a></li>
 {#                 <li><a href="#">contact</a></li>#}
 {#                 {% endfor %}#}
              </ul>
@@ -37,7 +38,7 @@
         <form method="POST">
             {% csrf_token %}
             <table>
-            {{ data.form }}
+            {{ form }}
             </table>
             <input type="submit" value="Отправить">
 

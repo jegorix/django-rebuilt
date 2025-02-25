@@ -1,3 +1,4 @@
+from django.core.signals import request_started
 from django.shortcuts import render
 from .forms import UserForm
 from django.http import HttpResponse
@@ -5,15 +6,32 @@ from django.http import HttpResponse
 
 
 def home(request):
-    userform = UserForm()
+
     data = {
-        'age': 19,
-        'form': userform,
+        'age': 19
     }
     head_items = [
         'info', 'about', 'goods', 'contact',
     ]
-    return render(request, 'boiler/index.html', context= {'head_items': head_items, 'data':data})
+
+    if request.method == "POST":
+        name = request.POST.get("name")
+        age = request.POST.get("age")
+        sex = request.POST.get("sex")
+        output = f"<h2>Username: {name}<h2> <h3>Age: {age}<h3> <h3>Sex: {sex}<h3>"
+        return HttpResponse(output)
+    else:
+        userform = UserForm()
+        return render(request, 'boiler/index.html', context={'form': userform, 'data': data})
+
+
+
+
+    # return render(request, 'boiler/index.html', context= {'head_items': head_items, 'data':data})
+
+
+
+
 
 def about(request):
     # return render(requset, '<h1>Hi message!</h1>')
@@ -25,3 +43,5 @@ def goods(request):
 def contact(request):
     return render(request, 'boiler/contacts.html')
 
+def info(request):
+    return render(request, 'boiler/info.html')
