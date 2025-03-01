@@ -18,7 +18,8 @@ def home(request):
         name = request.POST.get("name")
         age = request.POST.get("age")
         sex = request.POST.get("sex")
-        output = f"<h2>Username: {name}<h2> <h3>Age: {age}<h3> <h3>Sex: {sex}<h3>"
+        text = request.POST.get("text")
+        output = f"<h2>Username: {name}<h2> <h3>Age: {age}<h3> <h3>Sex: {sex}<h3> <h3>Text: {text}</h3>"
         return HttpResponse(output)
     else:
         userform = UserForm()
