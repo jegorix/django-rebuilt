@@ -14,17 +14,27 @@ def home(request):
         'info', 'about', 'goods', 'contact',
     ]
 
-    if request.method == "POST":
-        name = request.POST.get("name")
-        age = request.POST.get("age")
-        sex = request.POST.get("sex")
-        text = request.POST.get("text")
-        output = f"<h2>Username: {name}<h2> <h3>Age: {age}<h3> <h3>Sex: {sex}<h3> <h3>Text: {text}</h3>"
-        return HttpResponse(output)
+    # if request.method == "POST":
+    #     name = request.POST.get("name")
+    #     age = request.POST.get("age")
+    #     sex = request.POST.get("sex")
+    #     text = request.POST.get("text")
+    #     output = f"<h2>Username: {name}<h2> <h3>Age: {age}<h3> <h3>Sex: {sex}<h3> <h3>Text: {text}</h3>"
+    #     return HttpResponse(output)
+    # else:
+    #     userform = UserForm(field_order = ["name", "age", "comment"])
+    #     return render(request, 'boiler/index.html', context={'form': userform, 'data': data})
+
+    if request.method == 'POST':
+        userform = UserForm(request.POST)
+        if userform.is_valid():
+            name = userform.cleaned_data['name']
+            return HttpResponse(f"<h2>Name entered successfully - {name}</h2>")
+        else:
+            return HttpResponse(f"<h2>Invalid form</h2>")
     else:
         userform = UserForm()
-        return render(request, 'boiler/index.html', context={'form': userform, 'data': data})
-
+        return render(request, "boiler/index.html", {"form": userform})
 
 
 

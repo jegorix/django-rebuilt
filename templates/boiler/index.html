@@ -38,11 +38,9 @@
         <form method="POST">
             {% csrf_token %}
             <table>
-            {{ form }}
+            {{ form.as_table }}
             </table>
             <input type="submit" value="Отправить">
-
-
         </form>
 
 
