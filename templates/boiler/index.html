@@ -35,11 +35,18 @@
         {% endif %}
 
 
-        <form method="POST">
+        <form method="POST" novalidate>
             {% csrf_token %}
-            <table>
-            {{ form.as_table }}
-            </table>
+            <div class = "form-group">
+                {% for field in form %}
+                    <div>{{ field.label_tag }}</div>
+                    <div>{{ field }}</div>
+                    <div class = "errors">{{ field.errors }}</div>
+                {% endfor %}
+            </div>
+{#            <table>#}
+{#            {{ form.as_table }}#}
+{#            </table>#}
             <input type="submit" value="Отправить">
         </form>
 

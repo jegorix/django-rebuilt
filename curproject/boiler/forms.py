@@ -1,10 +1,12 @@
 from django import forms
 
 class UserForm(forms.Form):
-    name = forms.CharField(label = "Имя", help_text="Enter your name", min_length = 2, max_length = 20)
-    age = forms.IntegerField(label = "Возраст", help_text = "Enter your age")
-    comment = forms.CharField(label = "Комментарий", widget = forms.Textarea)
-    reklama = forms.BooleanField(label = "Согласны получать рекламу?", required = False)
+    name = forms.CharField(label = "Имя клиента")
+    age = forms.IntegerField(label = "Возраст клиента")
+    # name = forms.CharField(label = "Имя", help_text="Enter your name", min_length = 2, max_length = 20)
+    # age = forms.IntegerField(label = "Возраст", help_text = "Enter your age", min_value = 1, max_value = 120)
+    # comment = forms.CharField(label = "Комментарий", widget = forms.Textarea)
+    # reklama = forms.BooleanField(label = "Согласны получать рекламу?", required = False)
     # field_order = ["name", "age", "comment"]
     # file = forms.FileField(label = "Select a file", required = False)
     # nums = forms.DecimalField(label = 'Enter a decimal number', decimal_places = 2, required = False)

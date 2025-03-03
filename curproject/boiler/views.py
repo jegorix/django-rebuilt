@@ -24,17 +24,14 @@ def home(request):
     # else:
     #     userform = UserForm(field_order = ["name", "age", "comment"])
     #     return render(request, 'boiler/index.html', context={'form': userform, 'data': data})
-
-    if request.method == 'POST':
+    userform = UserForm()
+    if request.method == "POST":
         userform = UserForm(request.POST)
         if userform.is_valid():
-            name = userform.cleaned_data['name']
+            name = userform.cleaned_data["name"]
             return HttpResponse(f"<h2>Name entered successfully - {name}</h2>")
-        else:
-            return HttpResponse(f"<h2>Invalid form</h2>")
-    else:
-        userform = UserForm()
-        return render(request, "boiler/index.html", {"form": userform})
+
+    return render(request, "boiler/index.html", {"form": userform})
 
 
 
